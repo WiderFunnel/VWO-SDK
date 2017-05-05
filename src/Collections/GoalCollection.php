@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Goal;
+use GrowthOptimized\Items\Goal;
 
 /**
  * Class GoalCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class GoalCollection extends CollectionAbstract
 {

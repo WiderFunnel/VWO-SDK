@@ -1,21 +1,44 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Items\User;
+use GrowthOptimized\Items\User;
 
 /**
  * Class UsersAdapter
- * @package WiderFunnel
+ * @package GrowthOptimized
  */
 class UsersAdapter extends AdapterAbstract
 {
+
+
+    /**
+     * @return static
+     */
+    public function all()
+    {
+        $response = $this->client->get("accounts/{$this->getAccountId()}/users");
+
+        return User::createFromJson($response->getBody()->getContents());
+    }
+
     /**
      * @return static
      */
     public function find()
     {
         $response = $this->client->get("accounts/{$this->getAccountId()}/users/{$this->getResourceId()}");
+
+        return User::createFromJson($response->getBody()->getContents());
+    }
+
+    /**
+     * @param array $attributes
+     * @return User
+     */
+    public function create(array $attributes = [])
+    {
+        $response = $this->client->post("accounts/{$this->getAccountId()}/users", $attributes);
 
         return User::createFromJson($response->getBody()->getContents());
     }

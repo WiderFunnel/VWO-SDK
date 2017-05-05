@@ -1,20 +1,20 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Collections\CampaignCollection;
-use WiderFunnel\Collections\DraftCollection;
-use WiderFunnel\Collections\UserCollection;
+use GrowthOptimized\Collections\CampaignCollection;
+use GrowthOptimized\Collections\DraftCollection;
+use GrowthOptimized\Collections\UserCollection;
 
-use WiderFunnel\Items\Account;
-use WiderFunnel\Items\Campaign;
-use WiderFunnel\Items\Draft;
-use WiderFunnel\Items\Threshold;
-use WiderFunnel\Items\User;
+use GrowthOptimized\Items\Account;
+use GrowthOptimized\Items\Campaign;
+use GrowthOptimized\Items\Draft;
+use GrowthOptimized\Items\Threshold;
+use GrowthOptimized\Items\User;
 
 /**
  * Class AccountsAdapter
- * @package WiderFunnel
+ * @package GrowthOptimized
  */
 class AccountsAdapter extends AdapterAbstract
 {
@@ -71,9 +71,7 @@ class AccountsAdapter extends AdapterAbstract
      */
     public function campaigns()
     {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns");
-
-        return CampaignCollection::createFromJson($response->getBody()->getContents());
+        return new CampaignsAdapter($this->client, $this->getAccountId());
     }
 
     /**
@@ -89,9 +87,7 @@ class AccountsAdapter extends AdapterAbstract
      */
     public function drafts()
     {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/drafts");
-
-        return DraftCollection::createFromJson($response->getBody()->getContents());
+        return new DraftsAdapter($this->client, $this->getAccountId());
     }
 
     /**
@@ -107,9 +103,7 @@ class AccountsAdapter extends AdapterAbstract
      */
     public function users()
     {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/users");
-
-        return UserCollection::createFromJson($response->getBody()->getContents());
+        return new UsersAdapter($this->client, $this->getAccountId());
     }
 
     /**
@@ -120,17 +114,6 @@ class AccountsAdapter extends AdapterAbstract
         return new UsersAdapter($this->client, $this->getAccountId(), null, $userId);
     }
 
-    /**
-     * @param $name
-     * @param array $attributes
-     * @return Project
-     */
-    public function createUser(array $attributes = [])
-    {
-        $response = $this->client->post("accounts/{$this->getAccountId()}/users", $attributes);
-
-        return User::createFromJson($response->getBody()->getContents());
-    }
 
     /**
      * @return mixed

@@ -1,17 +1,27 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Items\Goal;
+use GrowthOptimized\Items\Goal;
 
 /**
  * Class GoalsAdapter
- * @package WiderFunnel
+ * @package GrowthOptimized
  */
 class GoalsAdapter extends AdapterAbstract
 {
+
     /**
-     * @param $goalId
+     * @return static
+     */
+    public function all()
+    {
+        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/goals");
+
+        return Goal::createFromJson($response->getBody()->getContents());
+    }
+
+    /**
      * @return static
      */
     public function find()
@@ -20,6 +30,18 @@ class GoalsAdapter extends AdapterAbstract
 
         return Goal::createFromJson($response->getBody()->getContents());
     }
+
+    /**
+     * @param array $attributes
+     * @return static
+     */
+    public function create(array $attributes = [])
+    {
+        $response = $this->client->post("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/goals", $attributes);
+
+        return Goal::createFromJson($response->getBody()->getContents());
+    }
+
 
     /**
      * @param array $attributes

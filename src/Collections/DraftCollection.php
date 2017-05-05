@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Draft;
+use GrowthOptimized\Items\Draft;
 
 /**
  * Class DraftCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class DraftCollection extends CollectionAbstract
 {

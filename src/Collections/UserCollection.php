@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\User;
+use GrowthOptimized\Items\User;
 
 /**
  * Class UserCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class UserCollection extends CollectionAbstract
 {

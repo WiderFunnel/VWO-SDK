@@ -1,17 +1,28 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Items\Variation;
+use GrowthOptimized\Items\Variation;
 
 /**
  * Class VariationsAdapter
- * @package WiderFunnel
+ * @package GrowthOptimized
  */
 class VariationsAdapter extends AdapterAbstract
 {
+
+
     /**
-     * @param $variationId
+     * @return Variation
+     */
+    public function all()
+    {
+        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations");
+
+        return Variation::createFromJson($response->getBody()->getContents());
+    }
+
+    /**
      * @return Variation
      */
     public function find()
@@ -23,111 +34,25 @@ class VariationsAdapter extends AdapterAbstract
 
     /**
      * @param array $attributes
-     * @return Variation
+     * @return static
      */
-    public function update(array $attributes = [])
+    public function create(array $attributes = [])
     {
-        var_dump($attributes);
-        $response = $this->client->patch("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations/{$this->getResourceId()}", $attributes);
+
+        $response = $this->client->post("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations", $attributes);
 
         return Variation::createFromJson($response->getBody()->getContents());
     }
 
     /**
-     * @param $name
+     * @param array $attributes
      * @return Variation
      */
-    public function name($name)
+    public function update(array $attributes = [])
     {
-        return $this->update([
-            'variations' => compact('name')
-        ]);
-    }
+        $response = $this->client->patch("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations/{$this->getResourceId()}", $attributes);
 
-    /**
-     * @param $isControl
-     * @return Variation
-     */
-    public function isControl($isControl)
-    {
-        return $this->update([
-            'variations' => compact('isControl')
-        ]);
-    }
-
-    /**
-     * @param $isDisabled
-     * @return Variation
-     */
-    public function isDisable($isDisabled)
-    {
-        return $this->update([
-            'variations' => compact('isDisabled')
-        ]);
-    }
-
-    /**
-     * @param $percent
-     * @return Variation
-     */
-    public function percentSplit($percentSplit)
-    {
-        return $this->update([
-            'variations' => compact('percentSplit')
-        ]);
-    }
-
-    /**
-     * @param $changes
-     * @return Variation
-     */
-    public function changes($changes)
-    {
-        return $this->update([
-            'variations' => compact('changes')
-        ]);
-    }
-
-    /**
-     * @param $javascript
-     * @return Variation
-     */
-    public function updateJavaScript($javascript)
-    {
-        return $this->update([
-            'variations' => [
-                'changes' => "<script>{$javascript}</script>"
-            ]
-        ]);
-    }
-
-    /**
-     * @param $css
-     * @return Variation
-     */
-    public function updateCss($css)
-    {
-        return $this->update([
-            'variations' => [
-                'changes' => "<style>{$css}</style>"
-            ]
-        ]);
-    }
-
-    /**
-     * @return Variation
-     */
-    public function pause()
-    {
-        return $this->update(['is_paused' => true]);
-    }
-
-    /**
-     * @return Variation
-     */
-    public function resume()
-    {
-        return $this->update(['is_paused' => false]);
+        return Variation::createFromJson($response->getBody()->getContents());
     }
 
     /**
@@ -139,4 +64,76 @@ class VariationsAdapter extends AdapterAbstract
 
         return $this->booleanResponse($response);
     }
+
+    /**
+     * @param $name
+     * @return static
+     */
+    public function name($name)
+    {
+        return $this->update([
+            'variations' => compact('name')
+        ]);
+    }
+
+    /**
+     * @param $isControl
+     * @return static
+     */
+    public function isControl($isControl)
+    {
+        return $this->update([
+            'variations' => compact('isControl')
+        ]);
+    }
+
+    /**
+     * @param $isDisabled
+     * @return static
+     */
+    public function isDisable($isDisabled)
+    {
+        return $this->update([
+            'variations' => compact('isDisabled')
+        ]);
+    }
+
+    /**
+     * @param $percent
+     * @return static
+     */
+    public function percentSplit($percentSplit)
+    {
+        return $this->update([
+            'variations' => compact('percentSplit')
+        ]);
+    }
+
+    /**
+     * @param $changes
+     * @return static
+     */
+    public function changes($changes)
+    {
+        return $this->update([
+            'variations' => compact('changes')
+        ]);
+    }
+
+    /**
+     * @return static
+     */
+    public function pause()
+    {
+        return $this->update(['is_paused' => true]);
+    }
+
+    /**
+     * @return static
+     */
+    public function resume()
+    {
+        return $this->update(['is_paused' => false]);
+    }
+
 }

@@ -1,23 +1,13 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Collections\AudienceCollection;
-use WiderFunnel\Collections\DimensionCollection;
-use WiderFunnel\Collections\ExperimentCollection;
-use WiderFunnel\Collections\GoalCollection;
-use WiderFunnel\Collections\CampaignCollection;
-use WiderFunnel\Collections\ProjectCollection;
-use WiderFunnel\Collections\UploadedListCollection;
+use GrowthOptimized\Collections\GoalCollection;
+use GrowthOptimized\Collections\CampaignCollection;
 
-use WiderFunnel\Items\Audience;
-use WiderFunnel\Items\Dimension;
-use WiderFunnel\Items\Experiment;
-use WiderFunnel\Items\Goal;
-use WiderFunnel\Items\Project;
-
-use WiderFunnel\Items\Campaign;
-use WiderFunnel\Items\Variation;
+use GrowthOptimized\Items\Goal;
+use GrowthOptimized\Items\Campaign;
+use GrowthOptimized\Items\Variation;
 
 /**
  * Class CampaignsAdapter
@@ -25,6 +15,17 @@ use WiderFunnel\Items\Variation;
  */
 class CampaignsAdapter extends AdapterAbstract
 {
+
+    /**
+     * @return static
+     */
+    public function all()
+    {
+        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns");
+
+        return CampaignCollection::createFromJson($response->getBody()->getContents());
+    }
+
     /**
      * @return static
      */
@@ -35,15 +36,6 @@ class CampaignsAdapter extends AdapterAbstract
         return Campaign::createFromJson($response->getBody()->getContents());
     }
 
-    /**
-     * @return static
-     */
-    public function shareLink()
-    {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/share");
-
-        return Campaign::createFromJson($response->getBody()->getContents());
-    }
     /**
      * @param $accountId
      * @param array $attributes
@@ -139,14 +131,21 @@ class CampaignsAdapter extends AdapterAbstract
     }
 
     /**
-     * @param $projectId
+     * @return static
+     */
+    public function shareLink()
+    {
+        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/share");
+
+        return Campaign::createFromJson($response->getBody()->getContents());
+    }
+
+    /**
      * @return mixed
      */
     public function variations()
     {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations");
-
-        return Variation::createFromJson($response->getBody()->getContents());
+        return new VariationsAdapter($this->client, $this->getAccountId(), $this->getCampaignId());
     }
 
     /**
@@ -157,39 +156,14 @@ class CampaignsAdapter extends AdapterAbstract
         $this->setResourceId($variationId);
         return new VariationsAdapter($this->client, $this->getAccountId(), $this->getCampaignId(), $variationId);
     }
-    /**
-     * @param array $attributes
-     * @return static
-     */
-    public function createVariations(array $attributes = [])
-    {
-        //$attributes = array_merge($attributes, compact('name', 'description'));
 
-        $response = $this->client->post("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/variations", $attributes);
-
-        return Variation::createFromJson($response->getBody()->getContents());
-    }
-
-
-    /**
-     * @param array $attributes
-     * @return static
-     */
-    public function createGoal(array $attributes = [])
-    {
-        $response = $this->client->post("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/goals", $attributes);
-
-        return Goal::createFromJson($response->getBody()->getContents());
-    }
 
     /**
      * @return mixed
      */
     public function goals()
     {
-        $response = $this->client->get("accounts/{$this->getAccountId()}/campaigns/{$this->getCampaignId()}/goals");
-
-        return GoalCollection::createFromJson($response->getBody()->getContents());
+        return new GoalsAdapter($this->client, $this->getAccountId(), $this->getCampaignId());
     }
 
     /**

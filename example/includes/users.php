@@ -5,13 +5,12 @@
  */
 
 // Get all users
-$vwo->account($accountId)->users();
+$vwo->account($accountId)->users()->all();
 
-// Get user details
 $vwo->account($accountId)->user($userId)->find();
 
 // Create a user
-$vwo->account($accountId)->createUser([
+$vwo->account($accountId)->users()->create([
   'name' => 'Test via API',
   'email' => 'vwo_test_api@mywebsitename.com',
   'password' => '1234asdf',

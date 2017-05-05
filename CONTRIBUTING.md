@@ -2,8 +2,6 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/GrowthOptimized/OAuth2-Optimizely).
-
 
 ## Pull Requests
 

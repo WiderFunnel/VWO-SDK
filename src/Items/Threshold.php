@@ -1,10 +1,10 @@
 <?php
 
-namespace WiderFunnel\Items;
+namespace GrowthOptimized\Items;
 
 /**
  * Class Threshold
- * @package WiderFunnel\Items;
+ * @package GrowthOptimized\Items;
  */
 class Threshold extends ItemAbstract
 {

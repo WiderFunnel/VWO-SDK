@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Account;
+use GrowthOptimized\Items\Account;
 
 /**
  * Class AccountCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class AccountCollection extends CollectionAbstract
 {

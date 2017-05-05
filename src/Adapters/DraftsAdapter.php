@@ -1,17 +1,28 @@
 <?php
 
-namespace WiderFunnel\Adapters;
+namespace GrowthOptimized\Adapters;
 
-use WiderFunnel\Items\Draft;
+use GrowthOptimized\Items\Draft;
 
 /**
  * Class DraftsAdapter
- * @package WiderFunnel
+ * @package GrowthOptimized
  */
 class DraftsAdapter extends AdapterAbstract
 {
+
     /**
-     * @param $draftId
+     * @return static
+     */
+    public function all()
+    {
+
+        $response = $this->client->get("accounts/{$this->getAccountId()}/drafts");
+
+        return Draft::createFromJson($response->getBody()->getContents());
+    }
+
+    /**
      * @return static
      */
     public function find()

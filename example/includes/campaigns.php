@@ -5,7 +5,7 @@
  */
 
 // Get all campaigns in an account / sub-account
-$vwo->account($accountId)->campaigns();
+$vwo->account($accountId)->campaigns()->all();
 
 
 // Get details of a specific campaign
@@ -58,7 +58,7 @@ $params = [
 
 ];
 
-$vwo->campaigns()->create($accountId, $params);
+$vwo->account($accountId)->campaigns()->create($params);
 
 // Update a campaign
 $vwo->account($accountId)->campaign($campaignId)->update([

@@ -1,13 +1,13 @@
 # VWO PHP SDK
-[![Packagist](https://img.shields.io/packagist/v/WiderFunnel/Optimizely-SDK.svg?maxAge=2592000?style=flat-square)](https://packagist.org/packages/widerfunnel/vwo-sdk)
-[![Travis](https://img.shields.io/travis/WiderFunnel/Optimizely-SDK/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/widerfunnel/VWO-SDK)
+[![Packagist](https://img.shields.io/packagist/v/GrowthOptimized/Vwo-SDK.svg?maxAge=2592000?style=flat-square)](https://packagist.org/packages/growthoptimized/vwo-sdk)
+[![Travis](https://img.shields.io/travis/GrowthOptimized/Vwo-SDK/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/growthoptimized/VWO-SDK)
 
 PHP Wrapper to interact with the VWO API.
 
 ## Installation
 
 ```bash
-composer require widerfunnel/vwo-sdk
+composer require GrowthOptimized/vwo-sdk
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ $vwo = Vwo::create($token);
 $vwo->accounts()->all();
 
 // Read account
-$vwo->accounts()->find($accountId);
+$vwo->account($accountId)->find();
 
 // Create a sub-account
 $vwo->account($accountId)->create(['name' => 'My new Account']);
@@ -43,7 +43,7 @@ $vwo->account($accountId)->update([
 
 ```php
 // Get all campaigns in an account / sub-account
-$vwo->account($accountId)->campaigns();
+$vwo->account($accountId)->campaigns()->all();
 
 // Get details of a specific campaign
 $vwo->account($accountId)->campaign($campaignId)->find();
@@ -91,7 +91,7 @@ $params = [
     ]
 
 ];
-$vwo->campaigns()->create($accountId, $params);
+$vwo->account($accountId)->campaigns()->create($params);
 
 // Update a campaign
 $vwo->account($accountId)->campaign($campaignId)->update([
@@ -126,7 +126,7 @@ $vwo->account($accountId)->campaign($campaignId)->trash();
 
 ```php
 // Get all variations of a campaign
-$vwo->account($accountId)->campaign($campaignId)->variations();
+$vwo->account($accountId)->campaign($campaignId)->variations()->all();
 
 // Get details of a specific campaign variation
 $vwo->account($accountId)->campaign($campaignId)->variation($variationId)->find();
@@ -140,7 +140,7 @@ $params = [
 ];
 
 // Create a campaign variation
-$vwo->account($accountId)->campaign($campaignId)->createVariations($params);
+$vwo->account($accountId)->campaign($campaignId)->variations()->create($params);
 
 // Update a campaign variation
 $variation = $vwo->account($accountId)->campaign($campaignId)->variation($variationId)->update([
@@ -166,13 +166,13 @@ $variation = $vwo->account($accountId)->campaign($campaignId)->variation($variat
 
 ```php
 // Get all goals of a campaign
-$vwo->account($accountId)->campaign($campaignId)->goals();
+$vwo->account($accountId)->campaign($campaignId)->goals()->all();
 
 // Find a goal
 $vwo->account($accountId)->campaign($campaignId)->goal($goalId)->find();
 
 // Create a goal in a project
-$vwo->account($accountId)->campaign($campaignId)->createGoal([
+$vwo->account($accountId)->campaign($campaignId)->goals()->create([
     'goals' => [
         'name' => 'New Goal 2',
         'type' => 'visitPage',
@@ -219,13 +219,13 @@ $vwo->account($accountId)->updateThreshold([
 
 ```php
 // Get all users
-$vwo->account($accountId)->users();
+$vwo->account($accountId)->users()->all();
 
 // Get user details
 $vwo->account($accountId)->user($userId)->find();
 
 // Create a user
-$vwo->account($accountId)->createUser([
+$vwo->account($accountId)->users()->create([
   'name' => 'Test via API',
   'email' => 'vwo_test_api@mywebsitename.com',
   'password' => '1234asdf',
@@ -252,7 +252,7 @@ $vwo->account($accountId)->user($userId)->delete();
 
 ```php
 // Get all drafts campaigns
-$drafts = $vwo->account($accountId)->drafts();
+$drafts = $vwo->account($accountId)->drafts()->all();
 
 // Get specific draft campaign
 $draft = $vwo->account($accountId)->draft($draftId)->find();

@@ -7,15 +7,12 @@
 // Retrieve all accounts
 $accounts = $vwo->accounts()->all();
 
-
 // Retrieve specific account
-$account = $vwo->accounts()->find($accountId);
-
+$account = $vwo->account($accountId)->find();
 
 // TODO:
 // Create a sub-account
-// $vwo->account($accountId)->create(['name' => 'WF Test Account']);
-
+//$vwo->account($accountId)->create(['name' => 'WF Test Account']);
 
 // Update account
 $vwo->account($accountId)->update([

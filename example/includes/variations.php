@@ -5,7 +5,7 @@
  */
 
 // Get all variations of a campaign
-$vwo->account($accountId)->campaign($campaignId)->variations();
+$vwo->account($accountId)->campaign($campaignId)->variations()->all();
 
 // Get details of a specific campaign variation
 $vwo->account($accountId)->campaign($campaignId)->variation($variationId)->find();
@@ -19,7 +19,7 @@ $params = [
 ];
 
 // Create a campaign variation
-$vwo->account($accountId)->campaign($campaignId)->createVariations($params);
+$vwo->account($accountId)->campaign($campaignId)->variations()->create($params);
 
 // Update a campaign variation
 $variation = $vwo->account($accountId)->campaign($campaignId)->variation($variationId)->update([

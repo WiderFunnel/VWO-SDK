@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Variation;
+use GrowthOptimized\Items\Variation;
 
 /**
  * Class VariationCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class VariationCollection extends CollectionAbstract
 {

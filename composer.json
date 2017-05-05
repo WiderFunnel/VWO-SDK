@@ -1,5 +1,5 @@
 {
-    "name": "widerfunnel/vwo-sdk",
+    "name": "growthoptimized/vwo-sdk",
     "type": "library",
     "description": "VWO API PHP SDK",
     "license": "MIT",
@@ -7,7 +7,7 @@
         {
             "name": "Tony Ta",
             "email": "tony.ta@widerfunnel.com",
-            "homepage": "https://github.com/WiderFunnel/VWO-SDK"
+            "homepage": "https://github.com/growthoptimized/VWO-SDK"
         }
     ],
     "keywords": [

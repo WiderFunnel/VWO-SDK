@@ -5,7 +5,7 @@
  */
 
 // Get all drafts campaigns
-$drafts = $vwo->account($accountId)->drafts();
+$drafts = $vwo->account($accountId)->drafts()->all();
 
 // Get specific draft campaign
 $draft = $vwo->account($accountId)->draft($draftId)->find();

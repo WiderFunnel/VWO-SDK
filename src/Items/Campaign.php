@@ -1,10 +1,10 @@
 <?php
 
-namespace WiderFunnel\Items;
+namespace GrowthOptimized\Items;
 
 /**
  * Class Campaign
- * @package WiderFunnel\Items;
+ * @package GrowthOptimized\Items;
  */
 class Campaign extends ItemAbstract
 {

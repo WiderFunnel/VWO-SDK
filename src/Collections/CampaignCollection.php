@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Campaign;
+use GrowthOptimized\Items\Campaign;
 
 /**
  * Class CampaignCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class CampaignCollection extends CollectionAbstract
 {

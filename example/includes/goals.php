@@ -5,13 +5,13 @@
  */
 
 // Get all goals of a campaign
-$vwo->account($accountId)->campaign($campaignId)->goals();
+$vwo->account($accountId)->campaign($campaignId)->goals()->all();
 
 // Find a goal
 $vwo->account($accountId)->campaign($campaignId)->goal($goalId)->find();
 
 // Create a goal in a project
-$vwo->account($accountId)->campaign($campaignId)->createGoal([
+$vwo->account($accountId)->campaign($campaignId)->goals()->create([
 	'goals' => [
 		'name' => 'New Goal 2',
 		'type' => 'visitPage',

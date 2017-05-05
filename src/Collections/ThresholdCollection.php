@@ -1,12 +1,12 @@
 <?php
 
-namespace WiderFunnel\Collections;
+namespace GrowthOptimized\Collections;
 
-use WiderFunnel\Items\Threshold;
+use GrowthOptimized\Items\Threshold;
 
 /**
  * Class ThresholdCollection
- * @package WiderFunnel\Collections
+ * @package GrowthOptimized\Collections
  */
 class ThresholdCollection extends CollectionAbstract
 {

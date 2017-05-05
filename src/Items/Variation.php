@@ -1,10 +1,10 @@
 <?php
 
-namespace WiderFunnel\Items;
+namespace GrowthOptimized\Items;
 
 /**
  * Class Variation
- * @package WiderFunnel\Items;
+ * @package GrowthOptimized\Items;
  */
 class Variation extends ItemAbstract
 {
