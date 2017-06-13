@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WiderFunnel\\":"src"
+            "GrowthOptimized\\":"src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WiderFunnel\\Tests\\":"tests"
+            "GrowthOptimized\\Tests\\":"tests"
         }
     }
 }
