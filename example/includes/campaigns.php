@@ -5,16 +5,15 @@
  */
 
 // Get all campaigns in an account / sub-account
-$vwo->account($accountId)->campaigns()->all();
+// var_dump($vwo->account($accountId)->campaigns()->all()['_data']);
 
 
 // Get details of a specific campaign
-$vwo->account($accountId)->campaign($campaignId)->find();
+// $vwo->account($accountId)->campaign($campaignId)->find();
 
 
 // Get share link for a specific campaign
-$vwo->account($accountId)->campaign($campaignId)->shareLink();
-
+// $vwo->account($accountId)->campaign($campaignId)->shareLink();
 
 // Create a campaign
 $params = [
@@ -58,26 +57,26 @@ $params = [
 
 ];
 
-$vwo->account($accountId)->campaigns()->create($params);
+var_dump($vwo->account($accountId)->campaigns()->create($params));
 
 // Update a campaign
-$vwo->account($accountId)->campaign($campaignId)->update([
-	'campaigns' => [
-    	'name' => 'New name'
-	]
-]);
+// $vwo->account($accountId)->campaign($campaignId)->update([
+// 	'campaigns' => [
+//     	'name' => 'New name'
+// 	]
+// ]);
 
 // Launch a campaign
-$vwo->account($accountId)->campaign($campaignId)->launch();
+// $vwo->account($accountId)->campaign($campaignId)->launch();
 
 // Pause a campaign
-$vwo->account($accountId)->campaign($campaignId)->pause();
+// $vwo->account($accountId)->campaign($campaignId)->pause();
 
 // Stop a campaign
-$vwo->account($accountId)->campaign($campaignId)->stop();
+// $vwo->account($accountId)->campaign($campaignId)->stop();
 
 // Restore a campaign
-$vwo->account($accountId)->campaign($campaignId)->restore();
+// $vwo->account($accountId)->campaign($campaignId)->restore();
 
 // Trash a campaign
-$vwo->account($accountId)->campaign($campaignId)->trash();
+// $vwo->account($accountId)->campaign($campaignId)->trash();

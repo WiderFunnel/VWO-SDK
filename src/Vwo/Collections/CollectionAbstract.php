@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
 use Illuminate\Support\Collection;
 

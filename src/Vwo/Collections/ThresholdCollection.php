@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\Campaign;
+use GrowthOptimized\Vwo\Items\Threshold;
 
 /**
- * Class CampaignCollection
+ * Class ThresholdCollection
  * @package GrowthOptimized\Collections
  */
-class CampaignCollection extends CollectionAbstract
+class ThresholdCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -19,11 +19,11 @@ class CampaignCollection extends CollectionAbstract
         if (!is_array($json)) {
             $json = json_decode($json, JSON_OBJECT_AS_ARRAY);
         }
-     
+
         $collection = new static($json);
 
-        return $collection->transform(function ($campaign) {
-            return new Campaign($campaign);
+        return $collection->transform(function ($threshold) {
+            return new Threshold($threshold);
         });
     }
 }

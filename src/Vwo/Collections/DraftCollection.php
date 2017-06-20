@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\Variation;
+use GrowthOptimized\Vwo\Items\Draft;
 
 /**
- * Class VariationCollection
+ * Class DraftCollection
  * @package GrowthOptimized\Collections
  */
-class VariationCollection extends CollectionAbstract
+class DraftCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -22,8 +22,8 @@ class VariationCollection extends CollectionAbstract
 
         $collection = new static($json);
 
-        return $collection->transform(function ($variation) {
-            return new Variation($variation);
+        return $collection->transform(function ($draft) {
+            return new Draft($draft);
         });
     }
 }

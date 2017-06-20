@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\Draft;
+use GrowthOptimized\Vwo\Items\User;
 
 /**
- * Class DraftCollection
+ * Class UserCollection
  * @package GrowthOptimized\Collections
  */
-class DraftCollection extends CollectionAbstract
+class UserCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -22,8 +22,8 @@ class DraftCollection extends CollectionAbstract
 
         $collection = new static($json);
 
-        return $collection->transform(function ($draft) {
-            return new Draft($draft);
+        return $collection->transform(function ($user) {
+            return new User($user);
         });
     }
 }

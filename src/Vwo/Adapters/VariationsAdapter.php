@@ -1,8 +1,8 @@
 <?php
 
-namespace GrowthOptimized\Adapters;
+namespace GrowthOptimized\Vwo\Adapters;
 
-use GrowthOptimized\Items\Variation;
+use GrowthOptimized\Vwo\Items\Variation;
 
 /**
  * Class VariationsAdapter

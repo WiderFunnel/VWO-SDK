@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Items;
+namespace GrowthOptimized\Vwo\Items;
 
 /**
  * Class Campaign

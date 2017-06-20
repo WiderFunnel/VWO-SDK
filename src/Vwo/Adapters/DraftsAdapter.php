@@ -1,8 +1,8 @@
 <?php
 
-namespace GrowthOptimized\Adapters;
+namespace GrowthOptimized\Vwo\Adapters;
 
-use GrowthOptimized\Items\Draft;
+use GrowthOptimized\Vwo\Items\Draft;
 
 /**
  * Class DraftsAdapter
