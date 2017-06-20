@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\Threshold;
+use GrowthOptimized\Vwo\Items\Variation;
 
 /**
- * Class ThresholdCollection
+ * Class VariationCollection
  * @package GrowthOptimized\Collections
  */
-class ThresholdCollection extends CollectionAbstract
+class VariationCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -22,8 +22,8 @@ class ThresholdCollection extends CollectionAbstract
 
         $collection = new static($json);
 
-        return $collection->transform(function ($threshold) {
-            return new Threshold($threshold);
+        return $collection->transform(function ($variation) {
+            return new Variation($variation);
         });
     }
 }

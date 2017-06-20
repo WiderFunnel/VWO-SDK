@@ -1,13 +1,13 @@
 <?php
 
-namespace GrowthOptimized\Adapters;
+namespace GrowthOptimized\Vwo\Adapters;
 
-use GrowthOptimized\Collections\GoalCollection;
-use GrowthOptimized\Collections\CampaignCollection;
+use GrowthOptimized\Vwo\Collections\GoalCollection;
+use GrowthOptimized\Vwo\Collections\CampaignCollection;
 
-use GrowthOptimized\Items\Goal;
-use GrowthOptimized\Items\Campaign;
-use GrowthOptimized\Items\Variation;
+use GrowthOptimized\Vwo\Items\Goal;
+use GrowthOptimized\Vwo\Items\Campaign;
+use GrowthOptimized\Vwo\Items\Variation;
 
 /**
  * Class CampaignsAdapter
@@ -41,9 +41,8 @@ class CampaignsAdapter extends AdapterAbstract
      * @param array $attributes
      * @return Campaign
      */
-    public function create($accountId, array $attributes = [])
+    public function create(array $attributes = [])
     {
-        $this->setAccountId($accountId);
   
         //$attributes = array_merge($attributes, compact('type', 'name'));
         

@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\User;
+use GrowthOptimized\Vwo\Items\Campaign;
 
 /**
- * Class UserCollection
+ * Class CampaignCollection
  * @package GrowthOptimized\Collections
  */
-class UserCollection extends CollectionAbstract
+class CampaignCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -19,11 +19,11 @@ class UserCollection extends CollectionAbstract
         if (!is_array($json)) {
             $json = json_decode($json, JSON_OBJECT_AS_ARRAY);
         }
-
+     
         $collection = new static($json);
 
-        return $collection->transform(function ($user) {
-            return new User($user);
+        return $collection->transform(function ($campaign) {
+            return new Campaign($campaign);
         });
     }
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Collections;
+namespace GrowthOptimized\Vwo\Collections;
 
-use GrowthOptimized\Items\Account;
+use GrowthOptimized\Vwo\Items\Goal;
 
 /**
- * Class AccountCollection
+ * Class GoalCollection
  * @package GrowthOptimized\Collections
  */
-class AccountCollection extends CollectionAbstract
+class GoalCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -19,11 +19,11 @@ class AccountCollection extends CollectionAbstract
         if (!is_array($json)) {
             $json = json_decode($json, JSON_OBJECT_AS_ARRAY);
         }
-        
+
         $collection = new static($json);
 
-        return $collection->transform(function ($account) {
-            return new Account($account);
+        return $collection->transform(function ($goal) {
+            return new Goal($goal);
         });
     }
 }

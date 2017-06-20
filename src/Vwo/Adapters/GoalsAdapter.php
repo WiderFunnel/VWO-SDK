@@ -1,8 +1,8 @@
 <?php
 
-namespace GrowthOptimized\Adapters;
+namespace GrowthOptimized\Vwo\Adapters;
 
-use GrowthOptimized\Items\Goal;
+use GrowthOptimized\Vwo\Items\Goal;
 
 /**
  * Class GoalsAdapter

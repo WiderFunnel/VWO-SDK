@@ -3,12 +3,12 @@
 namespace GrowthOptimized;
 
 use GuzzleHttp\ClientInterface;
-use GrowthOptimized\Adapters\AccountsAdapter;
-use GrowthOptimized\Adapters\CampaignsAdapter;
-use GrowthOptimized\Adapters\DraftsAdapter;
-use GrowthOptimized\Adapters\GoalsAdapter;
-use GrowthOptimized\Adapters\VariationsAdapter;
-use GrowthOptimized\Http\Client;
+use GrowthOptimized\Vwo\Adapters\AccountsAdapter;
+use GrowthOptimized\Vwo\Adapters\CampaignsAdapter;
+use GrowthOptimized\Vwo\Adapters\DraftsAdapter;
+use GrowthOptimized\Vwo\Adapters\GoalsAdapter;
+use GrowthOptimized\Vwo\Adapters\VariationsAdapter;
+use GrowthOptimized\Vwo\Http\Client;
 
 /**
  * Class Vwo
