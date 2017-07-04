@@ -3,6 +3,8 @@
 namespace GrowthOptimized\Vwo\Http;
 
 use GuzzleHttp\Client as BaseClient;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Exception\ClientException;
 
 /**
  * Class HttpClient
@@ -16,7 +18,7 @@ class Client extends BaseClient
      */
     public function get($endpoint)
     {
-        return $this->request('GET', $endpoint);
+        return $this->call('GET', $endpoint);
     }
 
     /**
@@ -25,8 +27,8 @@ class Client extends BaseClient
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function post($endpoint, $options)
-    {
-        return $this->request('POST', $endpoint, ['body' => json_encode($options)]);
+    {   
+        return $this->call('POST', $endpoint, $options);
     }
 
     /**
@@ -34,21 +36,10 @@ class Client extends BaseClient
      * @param $options
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function put($endpoint, $options)
+    public function patch($endpoint, array $options = [])
     {
-        return $this->request('PUT', $endpoint, ['body' => json_encode($options)]);
+        return $this->call('PATCH', $endpoint, $options);
     }
-
-    /**
-     * @param $endpoint
-     * @param $options
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function patch($endpoint, $options)
-    {
-        return $this->request('PATCH', $endpoint, ['body' => json_encode($options)]);
-    }
-
 
     /**
      * @param $endpoint
@@ -56,6 +47,22 @@ class Client extends BaseClient
      */
     public function delete($endpoint)
     {
-        return $this->request('DELETE', $endpoint);
+        return $this->call('DELETE', $endpoint);
     }
+
+
+    /**
+     * @param $endpoint, $method, $options
+     *
+    */
+    public function call($method, $endpoint, array $options = [])
+    {
+        try {
+            return $this->request($method, $endpoint, ['body' => json_encode($options)]);
+        } catch(ClientException $exception) {
+            return $exception->getResponse();            
+        }
+
+    }
+
 }

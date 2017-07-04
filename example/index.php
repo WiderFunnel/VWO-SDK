@@ -10,8 +10,8 @@ $dotenv->load();
 
 $token = getenv('VWO_TOKEN');
 
-$accountId = 292784; //central
-$campaignId = 140;
+$accountId = 209707; //central
+$campaignId = 158;
 $variationId = 6;
 $goalId = 2;
 $draftId = 1661344;
@@ -19,9 +19,9 @@ $userId = 373790;
 
 $vwo = Vwo::create($token);
 
-include __DIR__ . '/includes/accounts.php';
-include __DIR__ . '/includes/campaigns.php';
-// include __DIR__ . '/includes/variations.php';
+// include __DIR__ . '/includes/accounts.php';
+// include __DIR__ . '/includes/campaigns.php';
+include __DIR__ . '/includes/variations.php';
 // include __DIR__ . '/includes/goals.php';
 // include __DIR__ . '/includes/drafts.php';
 // include __DIR__ . '/includes/users.php';

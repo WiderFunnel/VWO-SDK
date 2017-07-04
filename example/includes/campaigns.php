@@ -57,7 +57,7 @@ $params = [
 
 ];
 
-var_dump($vwo->account($accountId)->campaigns()->create($params));
+// var_dump($vwo->account($accountId)->campaigns()->create($params));
 
 // Update a campaign
 // $vwo->account($accountId)->campaign($campaignId)->update([
