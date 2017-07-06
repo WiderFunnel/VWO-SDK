@@ -1,8 +1,8 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Collections;
+namespace GrowthOptimized\VWO\Collections;
 
-use GrowthOptimized\Vwo\Items\Variation;
+use GrowthOptimized\VWO\Items\Variation;
 
 /**
  * Class VariationCollection

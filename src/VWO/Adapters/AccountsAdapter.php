@@ -1,16 +1,16 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Adapters;
+namespace GrowthOptimized\VWO\Adapters;
 
-use GrowthOptimized\Vwo\Collections\CampaignCollection;
-use GrowthOptimized\Vwo\Collections\DraftCollection;
-use GrowthOptimized\Vwo\Collections\UserCollection;
+use GrowthOptimized\VWO\Collections\CampaignCollection;
+use GrowthOptimized\VWO\Collections\DraftCollection;
+use GrowthOptimized\VWO\Collections\UserCollection;
 
-use GrowthOptimized\Vwo\Items\Account;
-use GrowthOptimized\Vwo\Items\Campaign;
-use GrowthOptimized\Vwo\Items\Draft;
-use GrowthOptimized\Vwo\Items\Threshold;
-use GrowthOptimized\Vwo\Items\User;
+use GrowthOptimized\VWO\Items\Account;
+use GrowthOptimized\VWO\Items\Campaign;
+use GrowthOptimized\VWO\Items\Draft;
+use GrowthOptimized\VWO\Items\Threshold;
+use GrowthOptimized\VWO\Items\User;
 
 /**
  * Class AccountsAdapter

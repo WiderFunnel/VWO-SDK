@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Items;
+namespace GrowthOptimized\VWO\Items;
 
 /**
  * Class Campaign
@@ -15,5 +15,5 @@ class Campaign extends ItemAbstract
     const STATUS_NOT_STARTED = 'NOT_STARTED';
     const STATUS_ARCHIVED = 'ARCHIVED';
     const STATUS_TRASHED = 'TRASHED';
-    const STATUS_RESTORED = 'RESTORED';
+    const STATUS_RESTORED = RESTORED';
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Collections;
+namespace GrowthOptimized\VWO\Collections;
 
-use GrowthOptimized\Vwo\Items\Draft;
+use GrowthOptimized\VWO\Items\Account;
 
 /**
- * Class DraftCollection
+ * Class AccountCollection
  * @package GrowthOptimized\Collections
  */
-class DraftCollection extends CollectionAbstract
+class AccountCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -19,11 +19,11 @@ class DraftCollection extends CollectionAbstract
         if (!is_array($json)) {
             $json = json_decode($json, JSON_OBJECT_AS_ARRAY);
         }
-
+        
         $collection = new static($json);
 
-        return $collection->transform(function ($draft) {
-            return new Draft($draft);
+        return $collection->transform(function ($account) {
+            return new Account($account);
         });
     }
 }

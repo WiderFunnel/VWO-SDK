@@ -3,21 +3,21 @@
 namespace GrowthOptimized;
 
 use GuzzleHttp\ClientInterface;
-use GrowthOptimized\Vwo\Adapters\AccountsAdapter;
-use GrowthOptimized\Vwo\Adapters\CampaignsAdapter;
-use GrowthOptimized\Vwo\Adapters\DraftsAdapter;
-use GrowthOptimized\Vwo\Adapters\GoalsAdapter;
-use GrowthOptimized\Vwo\Adapters\VariationsAdapter;
-use GrowthOptimized\Vwo\Http\Client;
+use GrowthOptimized\VWO\Adapters\AccountsAdapter;
+use GrowthOptimized\VWO\Adapters\CampaignsAdapter;
+use GrowthOptimized\VWO\Adapters\DraftsAdapter;
+use GrowthOptimized\VWO\Adapters\GoalsAdapter;
+use GrowthOptimized\VWO\Adapters\VariationsAdapter;
+use GrowthOptimized\VWO\Http\Client;
 
 /**
- * Class Vwo
+ * Class VWO
  * @package GrowthOptimized
  */
-class Vwo
+class VWO
 {
     /**
-     * Vwo API endpoint
+     * VWO API endpoint
      */
     const BASE_URI = 'https://app.vwo.com/api/v2/';
 
@@ -27,7 +27,7 @@ class Vwo
     protected $client;
 
     /**
-     * Vwo constructor.
+     * VWO constructor.
      * @param ClientInterface $client
      */
     public function __construct(ClientInterface $client)

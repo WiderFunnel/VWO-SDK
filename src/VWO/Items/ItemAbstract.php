@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Items;
+namespace GrowthOptimized\VWO\Items;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
