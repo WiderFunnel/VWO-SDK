@@ -1,7 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
-use GrowthOptimized\Vwo;
+use GrowthOptimized\VWO;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -17,7 +17,7 @@ $goalId = 2;
 $draftId = 1661344;
 $userId = 373790;
 
-$vwo = Vwo::create($token);
+$vwo = VWO::create($token);
 
 // include __DIR__ . '/includes/accounts.php';
 // include __DIR__ . '/includes/campaigns.php';

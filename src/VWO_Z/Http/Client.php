@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Http;
+namespace GrowthOptimized\VWO\Http;
 
 use GuzzleHttp\Client as BaseClient;
 use Psr\Http\Message\ResponseInterface;

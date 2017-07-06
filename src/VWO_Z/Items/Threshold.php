@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Items;
+namespace GrowthOptimized\VWO\Items;
 
 /**
  * Class Threshold

@@ -1,14 +1,14 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Collections;
+namespace GrowthOptimized\VWO\Collections;
 
-use GrowthOptimized\Vwo\Items\Threshold;
+use GrowthOptimized\VWO\Items\Goal;
 
 /**
- * Class ThresholdCollection
+ * Class GoalCollection
  * @package GrowthOptimized\Collections
  */
-class ThresholdCollection extends CollectionAbstract
+class GoalCollection extends CollectionAbstract
 {
     /**
      * @param $json
@@ -22,8 +22,8 @@ class ThresholdCollection extends CollectionAbstract
 
         $collection = new static($json);
 
-        return $collection->transform(function ($threshold) {
-            return new Threshold($threshold);
+        return $collection->transform(function ($goal) {
+            return new Goal($goal);
         });
     }
 }

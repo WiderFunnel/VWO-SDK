@@ -1,8 +1,8 @@
 <?php
 
-namespace GrowthOptimized\Vwo\Adapters;
+namespace GrowthOptimized\VWO\Adapters;
 
-use GrowthOptimized\Vwo\Items\User;
+use GrowthOptimized\VWO\Items\User;
 
 /**
  * Class UsersAdapter
