@@ -7,7 +7,7 @@ PHP Wrapper to interact with the VWO API.
 ## Installation
 
 ```bash
-composer require WiderFunnel/vwo-sdk
+composer require widerfunnel/vwo-sdk
 ```
 
 ## Usage
