@@ -1,18 +1,18 @@
 <?php
 
-namespace GrowthOptimized;
+namespace WiderFunnel;
 
 use GuzzleHttp\ClientInterface;
-use GrowthOptimized\VWO\Adapters\AccountsAdapter;
-use GrowthOptimized\VWO\Adapters\CampaignsAdapter;
-use GrowthOptimized\VWO\Adapters\DraftsAdapter;
-use GrowthOptimized\VWO\Adapters\GoalsAdapter;
-use GrowthOptimized\VWO\Adapters\VariationsAdapter;
-use GrowthOptimized\VWO\Http\Client;
+use WiderFunnel\VWO\Adapters\AccountsAdapter;
+use WiderFunnel\VWO\Adapters\CampaignsAdapter;
+use WiderFunnel\VWO\Adapters\DraftsAdapter;
+use WiderFunnel\VWO\Adapters\GoalsAdapter;
+use WiderFunnel\VWO\Adapters\VariationsAdapter;
+use WiderFunnel\VWO\Http\Client;
 
 /**
  * Class VWO
- * @package GrowthOptimized
+ * @package WiderFunnel
  */
 class VWO
 {

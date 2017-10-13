@@ -1,10 +1,10 @@
 <?php
 
-namespace GrowthOptimized\VWO\Items;
+namespace WiderFunnel\VWO\Items;
 
 /**
  * Class Campaign
- * @package GrowthOptimized\Items;
+ * @package WiderFunnel\Items;
  */
 class Campaign extends ItemAbstract
 {
@@ -15,5 +15,5 @@ class Campaign extends ItemAbstract
     const STATUS_NOT_STARTED = 'NOT_STARTED';
     const STATUS_ARCHIVED = 'ARCHIVED';
     const STATUS_TRASHED = 'TRASHED';
-    const STATUS_RESTORED = RESTORED';
+    const STATUS_RESTORED = 'RESTORED';
 }

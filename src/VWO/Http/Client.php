@@ -1,6 +1,6 @@
 <?php
 
-namespace GrowthOptimized\VWO\Http;
+namespace WiderFunnel\VWO\Http;
 
 use GuzzleHttp\Client as BaseClient;
 use Psr\Http\Message\ResponseInterface;
@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\ClientException;
 
 /**
  * Class HttpClient
- * @package GrowthOptimized
+ * @package WiderFunnel
  */
 class Client extends BaseClient
 {

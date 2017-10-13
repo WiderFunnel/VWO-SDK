@@ -1,13 +1,13 @@
 <?php
 
-namespace GrowthOptimized\VWO\Adapters;
+namespace WiderFunnel\VWO\Adapters;
 
-use GrowthOptimized\VWO\Collections\GoalCollection;
-use GrowthOptimized\VWO\Collections\CampaignCollection;
+use WiderFunnel\VWO\Collections\GoalCollection;
+use WiderFunnel\VWO\Collections\CampaignCollection;
 
-use GrowthOptimized\VWO\Items\Goal;
-use GrowthOptimized\VWO\Items\Campaign;
-use GrowthOptimized\VWO\Items\Variation;
+use WiderFunnel\VWO\Items\Goal;
+use WiderFunnel\VWO\Items\Campaign;
+use WiderFunnel\VWO\Items\Variation;
 
 /**
  * Class CampaignsAdapter
