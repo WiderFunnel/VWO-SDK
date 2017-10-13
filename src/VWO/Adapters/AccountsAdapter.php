@@ -1,20 +1,20 @@
 <?php
 
-namespace GrowthOptimized\VWO\Adapters;
+namespace WiderFunnel\VWO\Adapters;
 
-use GrowthOptimized\VWO\Collections\CampaignCollection;
-use GrowthOptimized\VWO\Collections\DraftCollection;
-use GrowthOptimized\VWO\Collections\UserCollection;
+use WiderFunnel\VWO\Collections\CampaignCollection;
+use WiderFunnel\VWO\Collections\DraftCollection;
+use WiderFunnel\VWO\Collections\UserCollection;
 
-use GrowthOptimized\VWO\Items\Account;
-use GrowthOptimized\VWO\Items\Campaign;
-use GrowthOptimized\VWO\Items\Draft;
-use GrowthOptimized\VWO\Items\Threshold;
-use GrowthOptimized\VWO\Items\User;
+use WiderFunnel\VWO\Items\Account;
+use WiderFunnel\VWO\Items\Campaign;
+use WiderFunnel\VWO\Items\Draft;
+use WiderFunnel\VWO\Items\Threshold;
+use WiderFunnel\VWO\Items\User;
 
 /**
  * Class AccountsAdapter
- * @package GrowthOptimized
+ * @package WiderFunnel
  */
 class AccountsAdapter extends AdapterAbstract
 {

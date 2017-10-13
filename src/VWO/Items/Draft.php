@@ -1,10 +1,10 @@
 <?php
 
-namespace GrowthOptimized\VWO\Items;
+namespace WiderFunnel\VWO\Items;
 
 /**
  * Class Draft
- * @package GrowthOptimized\Items;
+ * @package WiderFunnel\Items;
  */
 class Draft extends ItemAbstract
 {

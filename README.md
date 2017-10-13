@@ -1,13 +1,13 @@
 # VWO PHP SDK
-[![Packagist](https://img.shields.io/packagist/v/GrowthOptimized/Vwo-SDK.svg?maxAge=2592000?style=flat-square)](https://packagist.org/packages/growthoptimized/vwo-sdk)
-[![Travis](https://img.shields.io/travis/GrowthOptimized/Vwo-SDK/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/growthoptimized/VWO-SDK)
+[![Packagist](https://img.shields.io/packagist/v/WiderFunnel/Vwo-SDK.svg?maxAge=2592000?style=flat-square)](https://packagist.org/packages/widerfunnel/vwo-sdk)
+[![Travis](https://img.shields.io/travis/WiderFunnel/Vwo-SDK/master.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/widerfunnel/VWO-SDK)
 
 PHP Wrapper to interact with the VWO API.
 
 ## Installation
 
 ```bash
-composer require GrowthOptimized/vwo-sdk
+composer require WiderFunnel/vwo-sdk
 ```
 
 ## Usage

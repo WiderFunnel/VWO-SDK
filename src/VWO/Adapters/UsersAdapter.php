@@ -1,12 +1,12 @@
 <?php
 
-namespace GrowthOptimized\VWO\Adapters;
+namespace WiderFunnel\VWO\Adapters;
 
-use GrowthOptimized\VWO\Items\User;
+use WiderFunnel\VWO\Items\User;
 
 /**
  * Class UsersAdapter
- * @package GrowthOptimized
+ * @package WiderFunnel
  */
 class UsersAdapter extends AdapterAbstract
 {
